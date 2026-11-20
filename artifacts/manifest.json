@@ -1,0 +1,249 @@
+{
+  "codec": "SOLO (task-defined); no external encoding",
+  "original": {
+    "version": 0,
+    "bytes": 32,
+    "chars": 23,
+    "sha256": "793db93203cc9cdf93cac01f926a73246402a63f2703bfe606e9a35d3da2186e",
+    "text": "Report: 丅巿 status ok ÿ.",
+    "path": "original.bin"
+  },
+  "versions": [
+    {
+      "version": 1,
+      "parent": 0,
+      "batch": 0,
+      "bytes": 38,
+      "chars": 28,
+      "sha256": "ae758ac538b8049a02e64b7e23d94bfc622e397294a190cb82db2b735958273e",
+      "text": "Report: DRAFT巿丠両status ok ÿ.",
+      "path": "version_1.bin",
+      "boundary_adjustments": [
+        "13:SINGLE->PAIR (ff01) [boundary]",
+        "21:PAIR->SINGLE (ff00) [boundary]"
+      ],
+      "records": [
+        "replace base=v0 chars[8,9) bytes[10,12) -> 'DRAFT' (v chars[8,13) bytes[8,13) +5 bytes)",
+        "replace base=v0 chars[10,11) bytes[16,17) -> '丠両' (v chars[14,16) bytes[17,21) +4 bytes)",
+        "preserve base=v0 chars[22,23) bytes[31,32) preserved verbatim (1 bytes)"
+      ]
+    },
+    {
+      "version": 2,
+      "parent": 1,
+      "batch": 1,
+      "bytes": 22,
+      "chars": 19,
+      "sha256": "196840f299204978bb5a7d68d2788c642ace24a6f15dcf66bfdac7104a086e05",
+      "text": "* DRAFTstatus ok ÿ.",
+      "path": "version_2.bin",
+      "boundary_adjustments": [],
+      "records": [
+        "replace base=v1 chars[0,0) bytes[0,0) -> '*' (v chars[0,1) bytes[0,1) +1 bytes)",
+        "replace base=v1 chars[0,7) bytes[0,7) -> '' (v chars[1,1) bytes[1,1) +0 bytes)",
+        "replace base=v1 chars[13,16) bytes[15,21) -> '' (v chars[7,7) bytes[7,7) +0 bytes)"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batch": 0,
+      "base": 0,
+      "new": 1,
+      "patches": [
+        {
+          "start_char": 8,
+          "end_char": 9,
+          "text": "DRAFT",
+          "base_version": null
+        },
+        {
+          "start_char": 10,
+          "end_char": 11,
+          "text": "丠両",
+          "base_version": null
+        },
+        {
+          "start_byte": 31,
+          "end_byte": 32,
+          "base_version": null
+        }
+      ],
+      "kept_runs": [
+        [
+          0,
+          8,
+          0,
+          8
+        ],
+        [
+          9,
+          10,
+          15,
+          17
+        ],
+        [
+          11,
+          23,
+          23,
+          38
+        ]
+      ],
+      "dropped_switch_spans": [
+        [
+          8,
+          10
+        ],
+        [
+          14,
+          16
+        ]
+      ],
+      "boundary_adjustments": [
+        "13:SINGLE->PAIR (ff01) [boundary]",
+        "21:PAIR->SINGLE (ff00) [boundary]"
+      ]
+    },
+    {
+      "batch": 1,
+      "base": 1,
+      "new": 2,
+      "patches": [
+        {
+          "start_char": 0,
+          "end_char": 7,
+          "text": "",
+          "base_version": null
+        },
+        {
+          "start_char": 13,
+          "end_char": 16,
+          "text": "",
+          "base_version": null
+        },
+        {
+          "start_char": 0,
+          "end_char": 0,
+          "text": "*",
+          "base_version": null
+        }
+      ],
+      "kept_runs": [
+        [
+          7,
+          13,
+          1,
+          7
+        ],
+        [
+          16,
+          28,
+          7,
+          22
+        ]
+      ],
+      "dropped_switch_spans": [
+        [
+          13,
+          15
+        ],
+        [
+          21,
+          23
+        ]
+      ],
+      "boundary_adjustments": []
+    }
+  ],
+  "generated": {
+    "bytes": 917535,
+    "boundary_features": [
+      [
+        131071,
+        "ESC split across boundary"
+      ],
+      [
+        131072,
+        "resolved pending sequence"
+      ],
+      [
+        262141,
+        "switch to PAIR before boundary"
+      ],
+      [
+        262143,
+        "PAIR split across boundary hi=0x06"
+      ],
+      [
+        262144,
+        "resolved pending sequence"
+      ],
+      [
+        393214,
+        "switch SINGLE->PAIR at boundary"
+      ],
+      [
+        524286,
+        "no-op switch at boundary"
+      ],
+      [
+        655358,
+        "literal U+00FF at boundary"
+      ],
+      [
+        786431,
+        "ESC split before literal U+00FF"
+      ],
+      [
+        786432,
+        "resolved pending sequence"
+      ],
+      [
+        917503,
+        "ESC split across boundary"
+      ],
+      [
+        917504,
+        "resolved pending sequence"
+      ]
+    ],
+    "path": "generated.bin"
+  },
+  "generated_version": {
+    "library": "separate (generated corpus)",
+    "version": 1,
+    "parent": 0,
+    "bytes": 917588,
+    "chars": 786433,
+    "sha256": "bc1eeae9496363c39edcd422fb52699fdf596da9b3fe266612e1a2d8a5e8c255",
+    "path": "generated_version_1.bin",
+    "boundary_adjustments": [
+      "65541:PAIR->SINGLE (ff00) [boundary]",
+      "131084:PAIR->SINGLE (ff00) [boundary]",
+      "196625:PAIR->SINGLE (ff00) [boundary]",
+      "262171:PAIR->SINGLE (ff00) [boundary]",
+      "327712:PAIR->SINGLE (ff00) [boundary]",
+      "393259:PAIR->SINGLE (ff00) [splice]",
+      "524336:PAIR->SINGLE (ff00) [splice]",
+      "655408:PAIR->SINGLE (ff00) [boundary]",
+      "720949:PAIR->SINGLE (ff00) [boundary]",
+      "786491:PAIR->SINGLE (ff00) [boundary]",
+      "852032:PAIR->SINGLE (ff00) [boundary]",
+      "917586:PAIR->SINGLE (ff00) [final]"
+    ],
+    "records": [
+      "replace base=v0 chars[65536,65538) bytes[65536,65538) -> 'Q丐' (v chars[65536,65538) bytes[65536,65541) +5 bytes)",
+      "replace base=v0 chars[131072,131074) bytes[131074,131076) -> 'Q丐' (v chars[131072,131074) bytes[131079,131084) +5 bytes)",
+      "replace base=v0 chars[196608,196610) bytes[196610,196612) -> 'Q丐' (v chars[196608,196610) bytes[196620,196625) +5 bytes)",
+      "replace base=v0 chars[262144,262146) bytes[262151,262153) -> 'Q丐' (v chars[262144,262146) bytes[262166,262171) +5 bytes)",
+      "replace base=v0 chars[327680,327682) bytes[327687,327689) -> 'Q丐' (v chars[327680,327682) bytes[327707,327712) +5 bytes)",
+      "replace base=v0 chars[393216,393218) bytes[393234,393238) -> 'Q丐' (v chars[393216,393218) bytes[393261,393266) +5 bytes)",
+      "replace base=v0 chars[458752,458754) bytes[524308,524312) -> 'Q丐' (v chars[458752,458754) bytes[524338,524343) +5 bytes)",
+      "replace base=v0 chars[524288,524290) bytes[655372,655374) -> 'Q丐' (v chars[524288,524290) bytes[655403,655408) +5 bytes)",
+      "replace base=v0 chars[589824,589826) bytes[720908,720910) -> 'Q丐' (v chars[589824,589826) bytes[720944,720949) +5 bytes)",
+      "replace base=v0 chars[655360,655362) bytes[786445,786447) -> 'Q丐' (v chars[655360,655362) bytes[786486,786491) +5 bytes)",
+      "replace base=v0 chars[720896,720898) bytes[851981,851983) -> 'Q丐' (v chars[720896,720898) bytes[852027,852032) +5 bytes)"
+    ]
+  },
+  "elapsed_seconds": 1.484
+}
