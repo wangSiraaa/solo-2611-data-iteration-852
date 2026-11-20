@@ -1,0 +1,10 @@
+# control entry form: A removed from leg 1
+TARGET 130
+LEG 1 free
+ENTER B 2
+LEG 2 back
+ENTER D 3
+LEG 3 breast
+ENTER E 4
+LEG 4 fly
+ENTER F 5

@@ -1,0 +1,11 @@
+# main entry form
+TARGET 130
+LEG 1 free
+ENTER A 1
+ENTER B 2
+LEG 2 back
+ENTER D 3
+LEG 3 breast
+ENTER E 4
+LEG 4 fly
+ENTER F 5

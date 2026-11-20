@@ -1,0 +1,2450 @@
+{
+  "artifacts": {
+    "swim_archive_v0.bin": "9356483e8dc501e2ac768c857e9a915e4584c59e5be78aa381f1c6bed07bce12",
+    "swim_entry_main.bin": "75f7d1531cb8dd0e63c8ac9f40343c151ce7ddc066653ccfa2926a9cc74c60ef",
+    "swim_archive_v1.bin": "2b6243fd9926b5da73a221f0419169e23fa6cc386f5b8429c24d86b00147b954",
+    "swim_archive_v2.bin": "9637ce1fc4b6c3fca394ce545b25576dc7c923cf18cb57011ad4da7098830a3b",
+    "swim_entry_no_a.bin": "25d4adfd052550aed9278aa88b25ca55cbf83af5f2b752d40a2ca16da3a8d6d1",
+    "swim_extra_archive_v0.bin": "bb8ed46d44d835dc7cf4043fec1c961335f5dedea63470acc94eadc430edb3cf",
+    "swim_extra_entry.bin": "c8463602896c1745f8d1739b547ebcf0b34886cf81dbb2971c403ceacb2b61e2"
+  },
+  "main": {
+    "versions": [
+      {
+        "version": 0,
+        "parent": null,
+        "sha256": "9356483e8dc501e2ac768c857e9a915e4584c59e5be78aa381f1c6bed07bce12",
+        "text": "# relay trial timing archive (main example)\nSESSION 1 A free\nTOUCH 05 5 105\nTOUCH 05 100 100\nOFFICIAL 1 2\nEND\nSESSION 2 B free\nTOUCH 02 102 102\nOFFICIAL 0 1\nEND\nSESSION 3 D back\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\nSESSION 4 E breast\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\nSESSION 5 F fly\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\n"
+      },
+      {
+        "version": 1,
+        "parent": 0,
+        "sha256": "2b6243fd9926b5da73a221f0419169e23fa6cc386f5b8429c24d86b00147b954",
+        "text": "# relay trial timing archive (main example)\nSESSION 1 A free\nTOUCH 05 5 105\nTOUCH 05 100 200\nOFFICIAL 1 2\nEND\nSESSION 2 B free\nTOUCH 02 102 102\nOFFICIAL 0 1\nEND\nSESSION 3 D back\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\nSESSION 4 E breast\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\nSESSION 5 F fly\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\n"
+      },
+      {
+        "version": 2,
+        "parent": 1,
+        "sha256": "9637ce1fc4b6c3fca394ce545b25576dc7c923cf18cb57011ad4da7098830a3b",
+        "text": "# relay trial timing archive (main example)\nSESSION 1 A free\nTOUCH 05 5 105\nTOUCH 05 100 200 REF 105 105\nOFFICIAL 1 2\nEND\nSESSION 2 B free\nTOUCH 02 102 102\nOFFICIAL 0 1\nEND\nSESSION 3 D back\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\nSESSION 4 E breast\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\nSESSION 5 F fly\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\n"
+      }
+    ],
+    "analyses": {
+      "v0": [
+        {
+          "sid": 1,
+          "swimmer": "A",
+          "stroke": "free",
+          "version": 0,
+          "session_line": 2,
+          "official": [
+            1,
+            2
+          ],
+          "official_line": 5,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 3,
+              "reading": 5,
+              "duration": [
+                5,
+                105
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 5,
+                  "char": [
+                    67,
+                    69
+                  ],
+                  "bytes": [
+                    67,
+                    69
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 5,
+                  "char": [
+                    70,
+                    71
+                  ],
+                  "bytes": [
+                    70,
+                    71
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 105,
+                  "char": [
+                    72,
+                    75
+                  ],
+                  "bytes": [
+                    72,
+                    75
+                  ]
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "line_no": 4,
+              "reading": 5,
+              "duration": [
+                100,
+                100
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 5,
+                  "char": [
+                    82,
+                    84
+                  ],
+                  "bytes": [
+                    82,
+                    84
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 100,
+                  "char": [
+                    85,
+                    88
+                  ],
+                  "bytes": [
+                    85,
+                    88
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 100,
+                  "char": [
+                    89,
+                    92
+                  ],
+                  "bytes": [
+                    89,
+                    92
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            100
+          ],
+          "naive_endpoint_range": [
+            0,
+            200
+          ],
+          "min_witness": [
+            0,
+            5,
+            105
+          ],
+          "max_witness": [
+            0,
+            5,
+            105
+          ],
+          "min_basis": [
+            "t1=5: 读数 05+0 圈；距上次 5 ∈ [5,105]",
+            "t2=105: 读数 05+1 圈；距上次 100 ∈ [100,100]"
+          ],
+          "max_basis": [
+            "t1=5: 读数 05+0 圈；距上次 5 ∈ [5,105]",
+            "t2=105: 读数 05+1 圈；距上次 100 ∈ [100,100]"
+          ]
+        },
+        {
+          "sid": 2,
+          "swimmer": "B",
+          "stroke": "free",
+          "version": 0,
+          "session_line": 7,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 9,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 8,
+              "reading": 2,
+              "duration": [
+                102,
+                102
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 2,
+                  "char": [
+                    133,
+                    135
+                  ],
+                  "bytes": [
+                    133,
+                    135
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 102,
+                  "char": [
+                    136,
+                    139
+                  ],
+                  "bytes": [
+                    136,
+                    139
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 102,
+                  "char": [
+                    140,
+                    143
+                  ],
+                  "bytes": [
+                    140,
+                    143
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            102
+          ],
+          "naive_endpoint_range": [
+            102,
+            102
+          ],
+          "min_witness": [
+            0,
+            102
+          ],
+          "max_witness": [
+            0,
+            102
+          ],
+          "min_basis": [
+            "t1=102: 读数 02+1 圈；距上次 102 ∈ [102,102]"
+          ],
+          "max_basis": [
+            "t1=102: 读数 02+1 圈；距上次 102 ∈ [102,102]"
+          ]
+        },
+        {
+          "sid": 3,
+          "swimmer": "D",
+          "stroke": "back",
+          "version": 0,
+          "session_line": 11,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 13,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 12,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    184,
+                    186
+                  ],
+                  "bytes": [
+                    184,
+                    186
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    187,
+                    189
+                  ],
+                  "bytes": [
+                    187,
+                    189
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    190,
+                    192
+                  ],
+                  "bytes": [
+                    190,
+                    192
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        },
+        {
+          "sid": 4,
+          "swimmer": "E",
+          "stroke": "breast",
+          "version": 0,
+          "session_line": 15,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 17,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 16,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    235,
+                    237
+                  ],
+                  "bytes": [
+                    235,
+                    237
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    238,
+                    240
+                  ],
+                  "bytes": [
+                    238,
+                    240
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    241,
+                    243
+                  ],
+                  "bytes": [
+                    241,
+                    243
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        },
+        {
+          "sid": 5,
+          "swimmer": "F",
+          "stroke": "fly",
+          "version": 0,
+          "session_line": 19,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 21,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 20,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    283,
+                    285
+                  ],
+                  "bytes": [
+                    283,
+                    285
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    286,
+                    288
+                  ],
+                  "bytes": [
+                    286,
+                    288
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    289,
+                    291
+                  ],
+                  "bytes": [
+                    289,
+                    291
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        }
+      ],
+      "v1": [
+        {
+          "sid": 1,
+          "swimmer": "A",
+          "stroke": "free",
+          "version": 1,
+          "session_line": 2,
+          "official": [
+            1,
+            2
+          ],
+          "official_line": 5,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 3,
+              "reading": 5,
+              "duration": [
+                5,
+                105
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 5,
+                  "char": [
+                    67,
+                    69
+                  ],
+                  "bytes": [
+                    67,
+                    69
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 5,
+                  "char": [
+                    70,
+                    71
+                  ],
+                  "bytes": [
+                    70,
+                    71
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 105,
+                  "char": [
+                    72,
+                    75
+                  ],
+                  "bytes": [
+                    72,
+                    75
+                  ]
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "line_no": 4,
+              "reading": 5,
+              "duration": [
+                100,
+                200
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 5,
+                  "char": [
+                    82,
+                    84
+                  ],
+                  "bytes": [
+                    82,
+                    84
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 100,
+                  "char": [
+                    85,
+                    88
+                  ],
+                  "bytes": [
+                    85,
+                    88
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 200,
+                  "char": [
+                    89,
+                    92
+                  ],
+                  "bytes": [
+                    89,
+                    92
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            100,
+            200
+          ],
+          "naive_endpoint_range": [
+            0,
+            300
+          ],
+          "min_witness": [
+            0,
+            5,
+            105
+          ],
+          "max_witness": [
+            0,
+            5,
+            205
+          ],
+          "min_basis": [
+            "t1=5: 读数 05+0 圈；距上次 5 ∈ [5,105]",
+            "t2=105: 读数 05+1 圈；距上次 100 ∈ [100,200]"
+          ],
+          "max_basis": [
+            "t1=5: 读数 05+0 圈；距上次 5 ∈ [5,105]",
+            "t2=205: 读数 05+2 圈；距上次 200 ∈ [100,200]"
+          ]
+        },
+        {
+          "sid": 2,
+          "swimmer": "B",
+          "stroke": "free",
+          "version": 1,
+          "session_line": 7,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 9,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 8,
+              "reading": 2,
+              "duration": [
+                102,
+                102
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 2,
+                  "char": [
+                    133,
+                    135
+                  ],
+                  "bytes": [
+                    133,
+                    135
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 102,
+                  "char": [
+                    136,
+                    139
+                  ],
+                  "bytes": [
+                    136,
+                    139
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 102,
+                  "char": [
+                    140,
+                    143
+                  ],
+                  "bytes": [
+                    140,
+                    143
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            102
+          ],
+          "naive_endpoint_range": [
+            102,
+            102
+          ],
+          "min_witness": [
+            0,
+            102
+          ],
+          "max_witness": [
+            0,
+            102
+          ],
+          "min_basis": [
+            "t1=102: 读数 02+1 圈；距上次 102 ∈ [102,102]"
+          ],
+          "max_basis": [
+            "t1=102: 读数 02+1 圈；距上次 102 ∈ [102,102]"
+          ]
+        },
+        {
+          "sid": 3,
+          "swimmer": "D",
+          "stroke": "back",
+          "version": 1,
+          "session_line": 11,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 13,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 12,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    184,
+                    186
+                  ],
+                  "bytes": [
+                    184,
+                    186
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    187,
+                    189
+                  ],
+                  "bytes": [
+                    187,
+                    189
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    190,
+                    192
+                  ],
+                  "bytes": [
+                    190,
+                    192
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        },
+        {
+          "sid": 4,
+          "swimmer": "E",
+          "stroke": "breast",
+          "version": 1,
+          "session_line": 15,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 17,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 16,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    235,
+                    237
+                  ],
+                  "bytes": [
+                    235,
+                    237
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    238,
+                    240
+                  ],
+                  "bytes": [
+                    238,
+                    240
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    241,
+                    243
+                  ],
+                  "bytes": [
+                    241,
+                    243
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        },
+        {
+          "sid": 5,
+          "swimmer": "F",
+          "stroke": "fly",
+          "version": 1,
+          "session_line": 19,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 21,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 20,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    283,
+                    285
+                  ],
+                  "bytes": [
+                    283,
+                    285
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    286,
+                    288
+                  ],
+                  "bytes": [
+                    286,
+                    288
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    289,
+                    291
+                  ],
+                  "bytes": [
+                    289,
+                    291
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        }
+      ],
+      "v2": [
+        {
+          "sid": 1,
+          "swimmer": "A",
+          "stroke": "free",
+          "version": 2,
+          "session_line": 2,
+          "official": [
+            1,
+            2
+          ],
+          "official_line": 5,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 3,
+              "reading": 5,
+              "duration": [
+                5,
+                105
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 5,
+                  "char": [
+                    67,
+                    69
+                  ],
+                  "bytes": [
+                    67,
+                    69
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 5,
+                  "char": [
+                    70,
+                    71
+                  ],
+                  "bytes": [
+                    70,
+                    71
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 105,
+                  "char": [
+                    72,
+                    75
+                  ],
+                  "bytes": [
+                    72,
+                    75
+                  ]
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "line_no": 4,
+              "reading": 5,
+              "duration": [
+                100,
+                200
+              ],
+              "referee": [
+                105,
+                105
+              ],
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 5,
+                  "char": [
+                    82,
+                    84
+                  ],
+                  "bytes": [
+                    82,
+                    84
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 100,
+                  "char": [
+                    85,
+                    88
+                  ],
+                  "bytes": [
+                    85,
+                    88
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 200,
+                  "char": [
+                    89,
+                    92
+                  ],
+                  "bytes": [
+                    89,
+                    92
+                  ]
+                },
+                {
+                  "field": "alo",
+                  "value": 105,
+                  "char": [
+                    97,
+                    100
+                  ],
+                  "bytes": [
+                    97,
+                    100
+                  ]
+                },
+                {
+                  "field": "ahi",
+                  "value": 105,
+                  "char": [
+                    101,
+                    104
+                  ],
+                  "bytes": [
+                    101,
+                    104
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            100
+          ],
+          "naive_endpoint_range": [
+            100,
+            100
+          ],
+          "min_witness": [
+            0,
+            5,
+            105
+          ],
+          "max_witness": [
+            0,
+            5,
+            105
+          ],
+          "min_basis": [
+            "t1=5: 读数 05+0 圈；距上次 5 ∈ [5,105]",
+            "t2=105: 读数 05+1 圈；距上次 100 ∈ [100,200]；裁判 [105,105]"
+          ],
+          "max_basis": [
+            "t1=5: 读数 05+0 圈；距上次 5 ∈ [5,105]",
+            "t2=105: 读数 05+1 圈；距上次 100 ∈ [100,200]；裁判 [105,105]"
+          ]
+        },
+        {
+          "sid": 2,
+          "swimmer": "B",
+          "stroke": "free",
+          "version": 2,
+          "session_line": 7,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 9,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 8,
+              "reading": 2,
+              "duration": [
+                102,
+                102
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 2,
+                  "char": [
+                    145,
+                    147
+                  ],
+                  "bytes": [
+                    145,
+                    147
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 102,
+                  "char": [
+                    148,
+                    151
+                  ],
+                  "bytes": [
+                    148,
+                    151
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 102,
+                  "char": [
+                    152,
+                    155
+                  ],
+                  "bytes": [
+                    152,
+                    155
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            102
+          ],
+          "naive_endpoint_range": [
+            102,
+            102
+          ],
+          "min_witness": [
+            0,
+            102
+          ],
+          "max_witness": [
+            0,
+            102
+          ],
+          "min_basis": [
+            "t1=102: 读数 02+1 圈；距上次 102 ∈ [102,102]"
+          ],
+          "max_basis": [
+            "t1=102: 读数 02+1 圈；距上次 102 ∈ [102,102]"
+          ]
+        },
+        {
+          "sid": 3,
+          "swimmer": "D",
+          "stroke": "back",
+          "version": 2,
+          "session_line": 11,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 13,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 12,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    196,
+                    198
+                  ],
+                  "bytes": [
+                    196,
+                    198
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    199,
+                    201
+                  ],
+                  "bytes": [
+                    199,
+                    201
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    202,
+                    204
+                  ],
+                  "bytes": [
+                    202,
+                    204
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        },
+        {
+          "sid": 4,
+          "swimmer": "E",
+          "stroke": "breast",
+          "version": 2,
+          "session_line": 15,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 17,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 16,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    247,
+                    249
+                  ],
+                  "bytes": [
+                    247,
+                    249
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    250,
+                    252
+                  ],
+                  "bytes": [
+                    250,
+                    252
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    253,
+                    255
+                  ],
+                  "bytes": [
+                    253,
+                    255
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        },
+        {
+          "sid": 5,
+          "swimmer": "F",
+          "stroke": "fly",
+          "version": 2,
+          "session_line": 19,
+          "official": [
+            0,
+            1
+          ],
+          "official_line": 21,
+          "feasible": true,
+          "failing_touch": null,
+          "touches": [
+            {
+              "index": 1,
+              "line_no": 20,
+              "reading": 10,
+              "duration": [
+                10,
+                10
+              ],
+              "referee": null,
+              "numbers": [
+                {
+                  "field": "reading",
+                  "value": 10,
+                  "char": [
+                    295,
+                    297
+                  ],
+                  "bytes": [
+                    295,
+                    297
+                  ]
+                },
+                {
+                  "field": "dlo",
+                  "value": 10,
+                  "char": [
+                    298,
+                    300
+                  ],
+                  "bytes": [
+                    298,
+                    300
+                  ]
+                },
+                {
+                  "field": "dhi",
+                  "value": 10,
+                  "char": [
+                    301,
+                    303
+                  ],
+                  "bytes": [
+                    301,
+                    303
+                  ]
+                }
+              ]
+            }
+          ],
+          "durations": [
+            10
+          ],
+          "naive_endpoint_range": [
+            10,
+            10
+          ],
+          "min_witness": [
+            0,
+            10
+          ],
+          "max_witness": [
+            0,
+            10
+          ],
+          "min_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ],
+          "max_basis": [
+            "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+          ]
+        }
+      ]
+    },
+    "selections": {
+      "v0_main_entry": {
+        "status": "ok",
+        "target": 130,
+        "best_total": 130,
+        "tied": [
+          [
+            [
+              1,
+              "A",
+              1,
+              100
+            ],
+            [
+              2,
+              "D",
+              3,
+              10
+            ],
+            [
+              3,
+              "E",
+              4,
+              10
+            ],
+            [
+              4,
+              "F",
+              5,
+              10
+            ]
+          ]
+        ],
+        "must_play": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "closest": [],
+        "qualifying_count": 1,
+        "legal_count": 2,
+        "excluded": []
+      },
+      "v1_main_entry": {
+        "status": "over_target",
+        "target": 130,
+        "best_total": 132,
+        "tied": [],
+        "must_play": [],
+        "closest": [
+          [
+            [
+              1,
+              "B",
+              2,
+              102
+            ],
+            [
+              2,
+              "D",
+              3,
+              10
+            ],
+            [
+              3,
+              "E",
+              4,
+              10
+            ],
+            [
+              4,
+              "F",
+              5,
+              10
+            ]
+          ]
+        ],
+        "qualifying_count": 0,
+        "legal_count": 2,
+        "excluded": []
+      },
+      "v2_main_entry": {
+        "status": "ok",
+        "target": 130,
+        "best_total": 130,
+        "tied": [
+          [
+            [
+              1,
+              "A",
+              1,
+              100
+            ],
+            [
+              2,
+              "D",
+              3,
+              10
+            ],
+            [
+              3,
+              "E",
+              4,
+              10
+            ],
+            [
+              4,
+              "F",
+              5,
+              10
+            ]
+          ]
+        ],
+        "must_play": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "closest": [],
+        "qualifying_count": 1,
+        "legal_count": 2,
+        "excluded": []
+      },
+      "v0_no_a_entry": {
+        "status": "over_target",
+        "target": 130,
+        "best_total": 132,
+        "tied": [],
+        "must_play": [],
+        "closest": [
+          [
+            [
+              1,
+              "B",
+              2,
+              102
+            ],
+            [
+              2,
+              "D",
+              3,
+              10
+            ],
+            [
+              3,
+              "E",
+              4,
+              10
+            ],
+            [
+              4,
+              "F",
+              5,
+              10
+            ]
+          ]
+        ],
+        "qualifying_count": 0,
+        "legal_count": 1,
+        "excluded": []
+      }
+    },
+    "lineage_touch2": [
+      [
+        2,
+        76,
+        104
+      ]
+    ],
+    "lineage_untouched": [
+      [
+        2,
+        139,
+        155
+      ],
+      [
+        1,
+        127,
+        143
+      ],
+      [
+        0,
+        127,
+        143
+      ]
+    ],
+    "archive_sha256_stable_under_entry_change": true
+  },
+  "extra": {
+    "versions": [
+      {
+        "version": 0,
+        "sha256": "bb8ed46d44d835dc7cf4043fec1c961335f5dedea63470acc94eadc430edb3cf",
+        "text": "# extra example archive\nSESSION 10 刘 free\nTOUCH 50 50 50\nOFFICIAL 0 1\nEND\nSESSION 11 吴 back\nTOUCH 09 9 9\nOFFICIAL 0 1\nEND\nSESSION 12 吴 breast\nTOUCH 09 9 9\nOFFICIAL 0 1\nEND\nSESSION 13 孙 back\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\nSESSION 14 宋 breast\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\nSESSION 15 万 fly\nTOUCH 10 10 10\nOFFICIAL 0 1\nEND\n"
+      }
+    ],
+    "analyses": [
+      {
+        "sid": 10,
+        "swimmer": "刘",
+        "stroke": "free",
+        "version": 0,
+        "session_line": 2,
+        "official": [
+          0,
+          1
+        ],
+        "official_line": 4,
+        "feasible": true,
+        "failing_touch": null,
+        "touches": [
+          {
+            "index": 1,
+            "line_no": 3,
+            "reading": 50,
+            "duration": [
+              50,
+              50
+            ],
+            "referee": null,
+            "numbers": [
+              {
+                "field": "reading",
+                "value": 50,
+                "char": [
+                  48,
+                  50
+                ],
+                "bytes": [
+                  53,
+                  55
+                ]
+              },
+              {
+                "field": "dlo",
+                "value": 50,
+                "char": [
+                  51,
+                  53
+                ],
+                "bytes": [
+                  56,
+                  58
+                ]
+              },
+              {
+                "field": "dhi",
+                "value": 50,
+                "char": [
+                  54,
+                  56
+                ],
+                "bytes": [
+                  59,
+                  61
+                ]
+              }
+            ]
+          }
+        ],
+        "durations": [
+          50
+        ],
+        "naive_endpoint_range": [
+          50,
+          50
+        ],
+        "min_witness": [
+          0,
+          50
+        ],
+        "max_witness": [
+          0,
+          50
+        ],
+        "min_basis": [
+          "t1=50: 读数 50+0 圈；距上次 50 ∈ [50,50]"
+        ],
+        "max_basis": [
+          "t1=50: 读数 50+0 圈；距上次 50 ∈ [50,50]"
+        ]
+      },
+      {
+        "sid": 11,
+        "swimmer": "吴",
+        "stroke": "back",
+        "version": 0,
+        "session_line": 6,
+        "official": [
+          0,
+          1
+        ],
+        "official_line": 8,
+        "feasible": true,
+        "failing_touch": null,
+        "touches": [
+          {
+            "index": 1,
+            "line_no": 7,
+            "reading": 9,
+            "duration": [
+              9,
+              9
+            ],
+            "referee": null,
+            "numbers": [
+              {
+                "field": "reading",
+                "value": 9,
+                "char": [
+                  98,
+                  100
+                ],
+                "bytes": [
+                  108,
+                  110
+                ]
+              },
+              {
+                "field": "dlo",
+                "value": 9,
+                "char": [
+                  101,
+                  102
+                ],
+                "bytes": [
+                  111,
+                  112
+                ]
+              },
+              {
+                "field": "dhi",
+                "value": 9,
+                "char": [
+                  103,
+                  104
+                ],
+                "bytes": [
+                  113,
+                  114
+                ]
+              }
+            ]
+          }
+        ],
+        "durations": [
+          9
+        ],
+        "naive_endpoint_range": [
+          9,
+          9
+        ],
+        "min_witness": [
+          0,
+          9
+        ],
+        "max_witness": [
+          0,
+          9
+        ],
+        "min_basis": [
+          "t1=9: 读数 09+0 圈；距上次 9 ∈ [9,9]"
+        ],
+        "max_basis": [
+          "t1=9: 读数 09+0 圈；距上次 9 ∈ [9,9]"
+        ]
+      },
+      {
+        "sid": 12,
+        "swimmer": "吴",
+        "stroke": "breast",
+        "version": 0,
+        "session_line": 10,
+        "official": [
+          0,
+          1
+        ],
+        "official_line": 12,
+        "feasible": true,
+        "failing_touch": null,
+        "touches": [
+          {
+            "index": 1,
+            "line_no": 11,
+            "reading": 9,
+            "duration": [
+              9,
+              9
+            ],
+            "referee": null,
+            "numbers": [
+              {
+                "field": "reading",
+                "value": 9,
+                "char": [
+                  148,
+                  150
+                ],
+                "bytes": [
+                  163,
+                  165
+                ]
+              },
+              {
+                "field": "dlo",
+                "value": 9,
+                "char": [
+                  151,
+                  152
+                ],
+                "bytes": [
+                  166,
+                  167
+                ]
+              },
+              {
+                "field": "dhi",
+                "value": 9,
+                "char": [
+                  153,
+                  154
+                ],
+                "bytes": [
+                  168,
+                  169
+                ]
+              }
+            ]
+          }
+        ],
+        "durations": [
+          9
+        ],
+        "naive_endpoint_range": [
+          9,
+          9
+        ],
+        "min_witness": [
+          0,
+          9
+        ],
+        "max_witness": [
+          0,
+          9
+        ],
+        "min_basis": [
+          "t1=9: 读数 09+0 圈；距上次 9 ∈ [9,9]"
+        ],
+        "max_basis": [
+          "t1=9: 读数 09+0 圈；距上次 9 ∈ [9,9]"
+        ]
+      },
+      {
+        "sid": 13,
+        "swimmer": "孙",
+        "stroke": "back",
+        "version": 0,
+        "session_line": 14,
+        "official": [
+          0,
+          1
+        ],
+        "official_line": 16,
+        "feasible": true,
+        "failing_touch": null,
+        "touches": [
+          {
+            "index": 1,
+            "line_no": 15,
+            "reading": 10,
+            "duration": [
+              10,
+              10
+            ],
+            "referee": null,
+            "numbers": [
+              {
+                "field": "reading",
+                "value": 10,
+                "char": [
+                  196,
+                  198
+                ],
+                "bytes": [
+                  216,
+                  218
+                ]
+              },
+              {
+                "field": "dlo",
+                "value": 10,
+                "char": [
+                  199,
+                  201
+                ],
+                "bytes": [
+                  219,
+                  221
+                ]
+              },
+              {
+                "field": "dhi",
+                "value": 10,
+                "char": [
+                  202,
+                  204
+                ],
+                "bytes": [
+                  222,
+                  224
+                ]
+              }
+            ]
+          }
+        ],
+        "durations": [
+          10
+        ],
+        "naive_endpoint_range": [
+          10,
+          10
+        ],
+        "min_witness": [
+          0,
+          10
+        ],
+        "max_witness": [
+          0,
+          10
+        ],
+        "min_basis": [
+          "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+        ],
+        "max_basis": [
+          "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+        ]
+      },
+      {
+        "sid": 14,
+        "swimmer": "宋",
+        "stroke": "breast",
+        "version": 0,
+        "session_line": 18,
+        "official": [
+          0,
+          1
+        ],
+        "official_line": 20,
+        "feasible": true,
+        "failing_touch": null,
+        "touches": [
+          {
+            "index": 1,
+            "line_no": 19,
+            "reading": 10,
+            "duration": [
+              10,
+              10
+            ],
+            "referee": null,
+            "numbers": [
+              {
+                "field": "reading",
+                "value": 10,
+                "char": [
+                  248,
+                  250
+                ],
+                "bytes": [
+                  273,
+                  275
+                ]
+              },
+              {
+                "field": "dlo",
+                "value": 10,
+                "char": [
+                  251,
+                  253
+                ],
+                "bytes": [
+                  276,
+                  278
+                ]
+              },
+              {
+                "field": "dhi",
+                "value": 10,
+                "char": [
+                  254,
+                  256
+                ],
+                "bytes": [
+                  279,
+                  281
+                ]
+              }
+            ]
+          }
+        ],
+        "durations": [
+          10
+        ],
+        "naive_endpoint_range": [
+          10,
+          10
+        ],
+        "min_witness": [
+          0,
+          10
+        ],
+        "max_witness": [
+          0,
+          10
+        ],
+        "min_basis": [
+          "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+        ],
+        "max_basis": [
+          "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+        ]
+      },
+      {
+        "sid": 15,
+        "swimmer": "万",
+        "stroke": "fly",
+        "version": 0,
+        "session_line": 22,
+        "official": [
+          0,
+          1
+        ],
+        "official_line": 24,
+        "feasible": true,
+        "failing_touch": null,
+        "touches": [
+          {
+            "index": 1,
+            "line_no": 23,
+            "reading": 10,
+            "duration": [
+              10,
+              10
+            ],
+            "referee": null,
+            "numbers": [
+              {
+                "field": "reading",
+                "value": 10,
+                "char": [
+                  297,
+                  299
+                ],
+                "bytes": [
+                  327,
+                  329
+                ]
+              },
+              {
+                "field": "dlo",
+                "value": 10,
+                "char": [
+                  300,
+                  302
+                ],
+                "bytes": [
+                  330,
+                  332
+                ]
+              },
+              {
+                "field": "dhi",
+                "value": 10,
+                "char": [
+                  303,
+                  305
+                ],
+                "bytes": [
+                  333,
+                  335
+                ]
+              }
+            ]
+          }
+        ],
+        "durations": [
+          10
+        ],
+        "naive_endpoint_range": [
+          10,
+          10
+        ],
+        "min_witness": [
+          0,
+          10
+        ],
+        "max_witness": [
+          0,
+          10
+        ],
+        "min_basis": [
+          "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+        ],
+        "max_basis": [
+          "t1=10: 读数 10+0 圈；距上次 10 ∈ [10,10]"
+        ]
+      }
+    ],
+    "selection": {
+      "status": "ok",
+      "target": 79,
+      "best_total": 79,
+      "tied": [
+        [
+          [
+            1,
+            "刘",
+            10,
+            50
+          ],
+          [
+            2,
+            "吴",
+            11,
+            9
+          ],
+          [
+            3,
+            "宋",
+            14,
+            10
+          ],
+          [
+            4,
+            "万",
+            15,
+            10
+          ]
+        ],
+        [
+          [
+            1,
+            "刘",
+            10,
+            50
+          ],
+          [
+            2,
+            "孙",
+            13,
+            10
+          ],
+          [
+            3,
+            "吴",
+            12,
+            9
+          ],
+          [
+            4,
+            "万",
+            15,
+            10
+          ]
+        ]
+      ],
+      "must_play": [
+        "万",
+        "刘",
+        "吴"
+      ],
+      "closest": [],
+      "qualifying_count": 2,
+      "legal_count": 3,
+      "excluded": []
+    }
+  },
+  "checks": [
+    {
+      "archive": "v0",
+      "sid": 1,
+      "ok": true,
+      "brute_durations": [
+        100
+      ]
+    },
+    {
+      "archive": "v0",
+      "sid": 2,
+      "ok": true,
+      "brute_durations": [
+        102
+      ]
+    },
+    {
+      "archive": "v0",
+      "sid": 3,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "v0",
+      "sid": 4,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "v0",
+      "sid": 5,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "v1",
+      "sid": 1,
+      "ok": true,
+      "brute_durations": [
+        100,
+        200
+      ]
+    },
+    {
+      "archive": "v1",
+      "sid": 2,
+      "ok": true,
+      "brute_durations": [
+        102
+      ]
+    },
+    {
+      "archive": "v1",
+      "sid": 3,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "v1",
+      "sid": 4,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "v1",
+      "sid": 5,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "v2",
+      "sid": 1,
+      "ok": true,
+      "brute_durations": [
+        100
+      ]
+    },
+    {
+      "archive": "v2",
+      "sid": 2,
+      "ok": true,
+      "brute_durations": [
+        102
+      ]
+    },
+    {
+      "archive": "v2",
+      "sid": 3,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "v2",
+      "sid": 4,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "v2",
+      "sid": 5,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "extra",
+      "sid": 10,
+      "ok": true,
+      "brute_durations": [
+        50
+      ]
+    },
+    {
+      "archive": "extra",
+      "sid": 11,
+      "ok": true,
+      "brute_durations": [
+        9
+      ]
+    },
+    {
+      "archive": "extra",
+      "sid": 12,
+      "ok": true,
+      "brute_durations": [
+        9
+      ]
+    },
+    {
+      "archive": "extra",
+      "sid": 13,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "extra",
+      "sid": 14,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    },
+    {
+      "archive": "extra",
+      "sid": 15,
+      "ok": true,
+      "brute_durations": [
+        10
+      ]
+    }
+  ],
+  "replay_ok": true
+}

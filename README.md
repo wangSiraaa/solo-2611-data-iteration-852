@@ -9,11 +9,15 @@
 | --- | --- |
 | `solo/codec.py` | 流式解码器 `Decoder`、检查点 `Checkpoint`、整件解码 `decode_document` / `decode_all` / `iter_decode`、独立编码入口 `encode_text` / `encode_document`，错误类型与路径记录 |
 | `solo/revision.py` | 修订库 `RevisionLibrary`、`replace` / `preserve` 补丁、版本与批次记录、边界模式调整、字节保真校验 |
+| `solo/timing.py` | 分段成绩档案：可复跑行格式解析（含各数字的原件字符/字节位置）、整场解释位集 DP、官方段全部可行耗时与端值见证全程、最早无合法前缀的行、记录版本谱系、独立穷举校验入口 |
+| `solo/relay.py` | 接力报名：独立保存的报名表解析、最坏情形保证下的阵容选择、最小最坏总时与并列阵容、必定上场队员、无合法阵容与超标的区分 |
+| `solo/swimdemo.py` | 游泳演示：真实编码原件、申报更正与裁判勘误两批修订、只变报名表的对照、一人备选两棒与平手阵容小例、小样穷举验证，写出 `artifacts/swim_*` |
 | `solo/sample.py` | 确定性合成原件生成器（ESC/PAIR 故意跨 128 KiB 块，含模式切换、空替换、连续补丁与非法尾部所需素材） |
 | `solo/demo.py` | 演示：真实原件、两批修订、未修改字节核对、错误报告、较大语料，写出 `artifacts/` |
-| `solo/__main__.py` | CLI：`decode/check/encode/revise/demo` |
+| `solo/__main__.py` | CLI：`decode/check/encode/revise/demo` 与 `timing/relay/swimdemo` |
 | `tests/test_solo.py` | 独立参考状态机、差分测试、跨块、检查点、修订、规模测试 |
-| `artifacts/` | 运行 `python3 -m solo.demo` 生成的真实原件、各版本字节与 `manifest.json` |
+| `tests/test_swim.py` | 题面例子逐项、陷阱段、矛盾行、位置与谱系、随机小样 DP↔穷举差分、阵容选择差分、限额与错误 |
+| `artifacts/` | 运行 `python3 -m solo.demo` 与 `python3 -m solo.swimdemo` 生成的真实原件、各版本字节与清单 |
 
 ## SOLO 编码（题面定义）
 
@@ -67,14 +71,61 @@ SHA-256**；`Checkpoint.resume(body)` / `Decoder.from_checkpoint()` 只在给定
 前后模式和切换字节；`kept_runs` 与 `dropped_switch_spans` 记录原样复制和未保留的
 纯切换跨度。
 
+## 分段成绩档案（`solo/timing.py`）
+
+旧电子计时牌只显示累计计时对 100 取余的两位读数；同一个 `05` 可能已越过一圈或
+两圈。档案是 SOLO 正文里的可复跑行格式（`#` 起注释行）：
+
+```
+SESSION <编号> <队员> <泳姿>
+TOUCH <rr> <dlo> <dhi>                  两位读数；与上次触壁的允许耗时闭区间
+TOUCH <rr> <dlo> <dhi> REF <alo> <ahi>  另有独立裁判给的绝对累计闭区间
+OFFICIAL <a> <b>                        官方取段：第 a 次到第 b 次触壁（a=0 为出发）
+END
+```
+
+- 出发时绝对累计为零；最多 20 次触壁，绝对累计不超过 2000；只保留从出发到最后
+  一触同时满足所有记录的整场解释。
+- 解析交付每条记录所在行、每个数字的原件字符区间与字节区间（沿用公开的分块解码
+  与字节映射）；`format_archive` 可规范化重放。
+- 分析对每次触壁求可达绝对累计集合（读数 mod 100、允许区间、裁判区间同时满足），
+  官方段耗时取所有全程解释的 `t_b−t_a`，给出全部可行耗时，并为最早、最晚各给
+  一条完整全程与逐触壁计算依据。两端各自取最早最晚再相减可能拼出从未发生的一段
+  （主例中 t1∈{5,105}、t2∈{105,205}，朴素相减得 [0,200]，真实取值只有 100），
+  报告会显式标出该陷阱。
+- 记录相互矛盾时，指出最早无合法前缀的触壁行及其依据。
+- 裁判勘误等更正走修订库批次；`char_lineage` 把一条记录沿版本链回溯到引入它的
+  批次，历史版本可重新分析复核，互不改写。
+
+## 接力报名（`solo/relay.py`）
+
+报名表独立保存（改变报名资格不改写成绩档案），行格式：
+
+```
+TARGET <目标总时>
+LEG <1..4> <泳姿>
+ENTER <队员> <训练编号>
+```
+
+- 每棒给出泳姿、可报名队员与指定训练编号；每人整队最多上一棒；不同队员的训练
+  相互独立，整队最坏总时为各棒最坏耗时之和；最多 12 名队员。
+- 只用四棒均有有效训练的阵容（训练存在、属于该队员、泳姿相符、有合法计时解释；
+  无效条目逐条给出排除原因）。
+- 先保证所有合法计时解释下整队不慢于目标，再在达标阵容中取最小最坏总时；所有
+  并列阵容中必定上场的队员一并给出。无合法阵容与有阵容但全部超标明确区分，后者
+  给出最接近的最坏总时。
+
 ## 运行
 
 ```bash
 python3 -m unittest discover -s tests -v      # 全部测试
-python3 -m solo.demo                          # 演示并写 artifacts/
+python3 -m solo.demo                            # 编码/修订演示并写 artifacts/
+python3 -m solo.swimdemo                      # 游泳接力演示并写 artifacts/swim_*
 python3 -m solo check artifacts/original.bin
 python3 -m solo decode --checkpoint 10 artifacts/version_1.bin
 python3 -m solo revise artifacts/original.bin patches.json > new.bin
+python3 -m solo timing artifacts/swim_archive_v0.bin
+python3 -m solo relay artifacts/swim_archive_v0.bin artifacts/swim_entry_main.bin
 ```
 
 `patches.json` 格式：
@@ -95,3 +146,7 @@ python3 -m solo revise artifacts/original.bin patches.json > new.bin
 - 修订：未修改区间字节等同、每版本可重开解码、失败批次不发布、preserve 逐字节
   保留、新文本等于同批替换、无悬空模式。
 - 规模：10 MiB 原件、一批 100 个补丁（`ScaleTests`），未修改运行按原字节复制。
+- 游泳：题面例子逐项核对（A 段只能 100、限 130 只有 A 达标、申报改 [100,200]
+  后 230/132 均超标、裁判勘误后回到 100、只取消 A 资格最佳变 132）；端值相减
+  陷阱；最早矛盾行；数字原件位置；版本谱系与历史复核；随机小样上位集 DP 与独立
+  穷举差分、阵容选择与独立穷举差分；触壁/累计/队员限额与格式错误。

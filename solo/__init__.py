@@ -40,6 +40,7 @@ from .revision import (
     preserve,
     replace,
 )
+from . import relay, timing
 
 __all__ = [
     "MODE_SINGLE",
@@ -74,4 +75,6 @@ __all__ = [
     "Version",
     "preserve",
     "replace",
+    "timing",
+    "relay",
 ]

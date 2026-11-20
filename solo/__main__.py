@@ -5,6 +5,9 @@
     python3 -m solo revise ORIGINAL PATCHES.json
     python3 -m solo demo
     python3 -m solo check FILE
+    python3 -m solo timing ARCHIVE.bin
+    python3 -m solo relay ARCHIVE.bin ENTRY.bin [--target N]
+    python3 -m solo swimdemo
 
 ``revise`` reads a JSON batch:
 
@@ -12,6 +15,10 @@
         {"replace": [start_char, end_char, "text"]},
         {"preserve": [start_byte, end_byte]}
     ]}
+
+``timing`` analyses a SOLO-encoded timing archive (see solo.timing for
+the line format).  ``relay`` additionally reads an independently saved
+entry form and selects relay line-ups (see solo.relay).
 """
 
 from __future__ import annotations
@@ -117,6 +124,46 @@ def cmd_check(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_timing(args: argparse.Namespace) -> int:
+    from . import timing
+
+    body = _load(args.file)
+    try:
+        parsed = timing.parse_archive_body(body, chunk_size=args.chunk)
+    except (DecodeError, timing.TimingError) as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+    analyses = timing.analyze_archive(parsed)
+    print(timing.render_archive_report(parsed, analyses))
+    return 0
+
+
+def cmd_relay(args: argparse.Namespace) -> int:
+    from . import relay, timing
+
+    archive_body = _load(args.archive)
+    entry_body = _load(args.entry)
+    try:
+        parsed = timing.parse_archive_body(archive_body, chunk_size=args.chunk)
+        analyses = timing.analyze_archive(parsed)
+        form = relay.parse_entry_body(entry_body, chunk_size=args.chunk)
+        if args.target is not None:
+            form = form.with_target(args.target)
+    except (DecodeError, timing.TimingError, relay.EntryError) as exc:
+        print(str(exc), file=sys.stderr)
+        return 2
+    selection = relay.select_lineups(form, analyses)
+    print(relay.render_selection(selection, form))
+    return 0
+
+
+def cmd_swimdemo(args: argparse.Namespace) -> int:
+    from .swimdemo import swimdemo
+
+    swimdemo()
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="solo", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -142,6 +189,21 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("check", help="validate a body")
     p.add_argument("file")
     p.set_defaults(func=cmd_check)
+
+    p = sub.add_parser("timing", help="analyse a SOLO-encoded timing archive")
+    p.add_argument("file")
+    p.add_argument("--chunk", type=int, default=131072)
+    p.set_defaults(func=cmd_timing)
+
+    p = sub.add_parser("relay", help="select relay line-ups from an entry form")
+    p.add_argument("archive")
+    p.add_argument("entry")
+    p.add_argument("--chunk", type=int, default=131072)
+    p.add_argument("--target", type=int, default=None)
+    p.set_defaults(func=cmd_relay)
+
+    p = sub.add_parser("swimdemo", help="run the swim-relay demonstration")
+    p.set_defaults(func=cmd_swimdemo)
     return parser
 
 

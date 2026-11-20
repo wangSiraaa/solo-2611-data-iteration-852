@@ -245,5 +245,5 @@
       "replace base=v0 chars[720896,720898) bytes[851981,851983) -> 'Q丐' (v chars[720896,720898) bytes[852027,852032) +5 bytes)"
     ]
   },
-  "elapsed_seconds": 1.484
+  "elapsed_seconds": 1.471
 }
